@@ -1,0 +1,21 @@
+﻿# Compiled binaries and object files
+*.exe
+*.out
+*.o
+*.obj
+*.pdb
+
+# Build output
+build/
+bin/
+Debug/
+Release/
+.vs/
+
+# IDE-generated files
+*.user
+*.suo
+
+# Temporary files
+*.tmp
+*.log
