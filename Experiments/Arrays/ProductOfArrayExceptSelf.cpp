@@ -53,22 +53,22 @@ public:
     {
         // TODO: Implement your solution.
         // Start with your own reasoning!
-
-        int leftProduct = 1;
-        int rightProduct = 1;
         int n = nums.size();
         vector<int> result(n, 1);
+        int leftProd = 1;
+        int rightProd = 1;
 
         for (int i = 0; i < n; i++)
         {
-            result[i] = leftProduct;
-            leftProduct *= nums[i];
+            /* code */
+            result[i] = leftProd;
+            leftProd *= nums[i];
         }
 
         for (int i = n - 1; i >= 0; i--)
         {
-            result[i] *= rightProduct;
-            rightProduct *= nums[i];
+            result[i] *= rightProd;
+            rightProd *= nums[i];
         }
 
         return result;
