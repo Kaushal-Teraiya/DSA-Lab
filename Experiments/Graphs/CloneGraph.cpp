@@ -51,18 +51,19 @@ class Solution
 public:
     Node *cloneGraph(Node *node)
     {
-        // TODO: Implement your solution.
-        if (node == nullptr)
-            return nullptr;
         unordered_map<Node *, Node *> visited;
         queue<Node *> q;
 
-        q.push(node);
+        if (node == nullptr)
+            return nullptr;
+
         Node *clone = new Node(node->val);
         visited[node] = clone;
+        q.push(node);
 
         while (!q.empty())
         {
+            /* code */
             Node *current = q.front();
             q.pop();
 
@@ -78,7 +79,6 @@ public:
                 visited[current]->neighbors.push_back(visited[neighbor]);
             }
         }
-
         return clone;
     }
 };
