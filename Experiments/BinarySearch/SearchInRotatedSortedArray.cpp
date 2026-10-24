@@ -60,24 +60,30 @@ public:
         {
             int mid = left + (right - left) / 2;
 
+            //when nums[mid] becomes exactly target we found the answer.
             if (nums[mid] == target)
             {
-                return mid;
+                return mid; //return index
             }
 
+            //Why this check exists?:
+            //Even if the array is rotated atleast one half of it is always sorted.
+            //so this part checks if the left half is less than mid(which means it's sorted).
             if (nums[left] <= nums[mid])
             {
+                //this check means if the target lies in the left half(binary search). shrink from right.
                 if (target < nums[mid] && target >= nums[left])
                 { // left as it is..
                     right = mid - 1;
                 }
-                else
+                else //else shrink from left.
                 {
                     left = mid + 1;
                 }
             }
-            else
+            else //else is right half sorted?
             {
+                //same procedure as left.
                 if (target > nums[mid] && target <= nums[right])
                 {
                     left = mid + 1;
